@@ -6,11 +6,11 @@ const App = () => {
   return (
     <div>
         <Tooltip text="This is a tooltip">
-          <h1>Hover over me</h1>
+          <h2 className="tooltip">Hover over me</h2>
         </Tooltip>
 
         <Tooltip text="This is another tooltip">
-          <p>Hover over me to see another tooltip</p>
+          <p className="tooltip">Hover over me to see another tooltip</p>
         </Tooltip>
               
     </div>
@@ -29,7 +29,7 @@ const Tooltip = ({ text, children }) => {
   };
 
   return (
-    <div className="tooltip" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className="tooltip-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       {children}
       {
         showTooltip && <button className="tooltiptext">{text}</button>
